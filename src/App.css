@@ -1,38 +1,57 @@
 .App {
-  text-align: center;
+  display: grid;
+  grid-template-areas:
+    "header"
+    "content";
+  grid-template-rows: 80px 1fr 70px;
+  grid-template-columns: 1fr;
+  grid-row-gap: 10px;
+  grid-column-gap: 10px;
+  height: 100vh;
+  margin: 0;
+}
+header,
+footer,
+content,
+nav,
+div {
+}
+#pageHeader {
+  grid-area: header;
+}
+#pageFooter {
+  grid-area: footer;
+}
+#mainArticle {
+  grid-area: content;
+  padding: 10px;
+  display: grid;
+  grid-auto-rows: max-content;
+  grid-column: 1fr;
+  margin: 30px;
+  gap: 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.row1 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 100vw;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.row2 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 100vw;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+/* Stack the layout on small devices/viewports. */
+@media all and (max-width: 575px) {
+  .App {
+    grid-template-areas:
+      "header"
+      "article"
+      "ads"
+      "nav"
+      "footer";
+    grid-template-rows: 80px 1fr 70px 1fr 70px;
+    grid-template-columns: 1fr;
   }
 }
