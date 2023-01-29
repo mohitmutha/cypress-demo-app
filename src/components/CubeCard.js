@@ -4,8 +4,16 @@ import ResultDisplayCard from "./ResultDisplayCard"
 
 const CubeCard = (props) => {
   const [result, setResult] = useState()
-  useEffect(() => setResult(Math.pow(props.value, 3)),[props.value])
-  return <ResultDisplayCard title="Cube" displayText={result}/>
+  useEffect(() => {
+    if (isNaN(props.value)) {
+      setResult("Error - Non numeric value")
+    } else {
+      setResult(Math.pow(props.value, 3))
+    }
+
+  }, [props.value])
+  
+  return <ResultDisplayCard id="cube-result" title="Cube" displayText={result}/>
 }
 
 export default CubeCard
