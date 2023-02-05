@@ -21,8 +21,8 @@ export default function MyAppBar() {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            News
+          <Typography data-testid="page-title" variant="h6" component="div" sx={{ flexGrow: 1 }}>
+            Calculator
           </Typography>
           <Button color="inherit">Login</Button>
         </Toolbar>
