@@ -32,21 +32,22 @@ export default function InputCard(props) {
   return (
     <Container><Card >
       <CardHeader
-
+        id='input-card-title'
         title="Enter a number"
         subheader="Calculates the square, cube and Fibonacci value"
       />
 
       <CardContent>
-        <Input size='medium' 
-                fullWidth
-                type='number'
-                value={props.value} 
-                onChange={(e) => props.onChange(e.target.value)}></Input>
+        <Input size='medium'
+          id={'input-value'}
+          fullWidth
+          type='number'
+          value={props.value}
+          onChange={(e) => props.onChange(e.target.value)}></Input>
       </CardContent>
       <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites" style={{color:`${props.isFavorite ? 'red':''}`}}>
-          <FavoriteIcon onClick={() => props.onFavouriteClick(props.value)}/>
+        <IconButton id='fav-btn' aria-label="add to favorites" style={{ color: `${props.isFavorite ? 'red' : ''}` }}>
+          <FavoriteIcon onClick={() => props.onFavouriteClick(props.value)} />
         </IconButton>
         <ExpandMore
           expand={expanded}
