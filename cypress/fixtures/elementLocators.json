@@ -1,5 +1,7 @@
 {
   "pageTitle": "[data-testid=page-title]",
-  "numberInput": "",
-  "body": "Fixtures are a great way to mock data for responses to routes"
+  "numberInput": "#input-value",
+  "squareResult": "#square-result-value",
+  "cubeResult": "#cube-result-value",
+  "fibonacciResult": "#fibonacci-result-value"
 }
